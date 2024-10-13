@@ -38,9 +38,13 @@ const ensureTwoQuestions = async (difficulty) => {
     let questions = [];
     while (questions.length < 2) {
         const newQuestions = await fetchQuestionsByDifficulty(difficulty);
-        questions = [...questions, ...newQuestions];
+        newQuestions.forEach((question) => {
+            if (questions.length < 2 && !questions.some(q => q.question === question.question)) {
+                questions.push(question);
+            }
+        });
     }
-    return questions.slice(0, 2); 
+    return questions; 
 }
 
 const loadingIndicator = document.createElement('p');
@@ -204,7 +208,7 @@ const selectOtherCategory = (score1, score2) => {
 }
 
 const endGame = () => {
-    alert("Thank You for the Game");
+    
     window.location.href = 'index.html';
 }
 
