@@ -51,9 +51,9 @@ document.getElementById('question').appendChild(loadingIndicator);
 const fetchAllQuestions = async () => {
     try {
         const [easyQuestions, mediumQuestions, hardQuestions] = await Promise.all([
-            fetchQuestionsByDifficulty('easy'),
-            fetchQuestionsByDifficulty('medium'),
-            fetchQuestionsByDifficulty('hard')
+            ensureTwoQuestions('easy'),
+            ensureTwoQuestions('medium'),
+            ensureTwoQuestions('hard')
         ]);
 
         allQuestions = [...easyQuestions, ...mediumQuestions, ...hardQuestions];
