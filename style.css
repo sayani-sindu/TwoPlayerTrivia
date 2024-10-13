@@ -1,0 +1,247 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures consistent sizing */
+}
+
+html, body {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Align content in a column, can be 'row' if desired */
+}
+
+body {
+    background-image: url('triviaBackGround.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#playerDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); 
+    border-radius: 8px; 
+    box-shadow: 0 0 5px;
+}
+
+.input-container{
+    display: flex;
+    flex-direction: row;
+    height: 30px;
+    width: 350px;
+    margin: 10px 0; 
+}
+
+
+label{
+    font-size: large;
+}
+
+#player1, #player2{
+    height: 30px;
+    width: 250px;
+    margin-left: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 3px;
+}
+
+#startGame{
+    height: 30px;
+    width: 250px;
+    background-color: none;
+    font-size: large;
+    color: green;
+    background-color: white;
+    border: white;
+    border-radius: 20px;
+}
+#startGame:hover{
+    color: white;
+    background-color: green;
+    cursor: pointer;
+}
+
+#Game{
+    display: flex;
+}
+#addCategories{
+    height: 40px;
+    width: 400px;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 20px;
+    box-shadow: 0 0 3px;
+    cursor: pointer;
+    display: none;
+    margin: 20px;
+}
+#addCategories option{
+    font-size: large;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-bottom: 5px;
+    padding: 10px;
+}
+#addCategories option:hover{
+    background-color: #45a049;
+}
+
+#addategories option:focus{
+    outline: none;
+    border-color: #66afe9;
+}
+
+#category-selection-btn{
+    height: 40px;
+    margin: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: large;
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 25px;
+    color: green;
+}
+#category-selection-btn:hover{
+    color: white;
+    background-color: green;
+}
+
+#questions{
+    height: 500px;
+    width: 800px;
+    background-color: rgb(255, 255, 255,  0.8);
+    border-radius: 30px;
+
+
+}
+
+#question{
+    height: 150px;
+    border-bottom: 1px solid black;
+}
+
+#selectOption{
+    display: none;
+}
+
+.loading{
+    font-size: xx-large;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 10px;
+    color: green;
+}
+
+.player-name{
+    font-size: x-large;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    margin-top: 10px;
+    font: bold;
+    color: red;
+    border-bottom: 2px solid red;
+}
+
+.question{
+    font-size: large;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-left: 30px;
+    margin-top: 50px;
+}
+
+.options-container{
+    font-size: large;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-left: 30px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.option{
+    font-size: large;
+    margin: 10px;
+}
+
+input[type='radio']{
+    height: 20px;
+    width: 20px;
+    margin-right: 5px;
+}
+
+.submit-option{
+    background-color: black;
+    color: white;
+    border: none;
+    height: 30px;
+    width: 100px;
+    margin: 10px 350px;
+    cursor: pointer;
+}
+
+.answer-display{
+    font-size: x-large;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+}
+
+.submit-option:hover{
+    background-color: white;
+    color: black;
+}
+
+#showAnswer{
+    display: none;
+    color: black;
+    background-color: rgb(255, 255, 255,  0.8);
+    margin: 20px 20px;
+    padding: 10px 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px;
+    
+}
+
+.end-options{
+    font-size: large;
+    margin: 10px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 200px;
+} 
+.continue-game, .end-game{
+    height: 50px;
+    width: 200px;
+    font-size: x-large;
+    border-radius: 20px;
+    box-shadow: 0 0 10px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+}
+.continue-game{
+    color: green;
+    background-color: white;
+    cursor: pointer;
+}
+.end-game{
+    color: red;
+    background-color: white;
+    cursor: pointer;
+}
+
+.continue-game:hover{
+    color: white;
+    background-color: green;
+}
+
+.end-game:hover{
+    color: white;
+    background-color: red;
+}
