@@ -3,6 +3,7 @@
 
 ## Table of Contents
 - [Description](#description)
+- [Deployment](#deployment)
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -12,6 +13,10 @@
 
 ## Description
 "A fun interactive trivia game for two players. The game will ask a series of questions—2 easy, 2 medium, and 2 hard—alternating between the players. The player with the most correct answers at the end wins."
+
+## Deployment
+
+Deployment link: https://sayani-sindu.github.io/TwoPlayerTrivia/
 
 ## Features
 - Two-player turn-based gameplay
