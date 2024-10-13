@@ -1,11 +1,15 @@
+// API Key, Player-1, player-2 and category
+
 const API_KEY = 'ApiKeyAuth';
 const category = sessionStorage.getItem('category');
 const player1 = sessionStorage.getItem('player1');
 const player2 = sessionStorage.getItem('player2');
 
+//scores of the players-- if it is not the first round
 const score1 = sessionStorage.getItem('score1');
 const score2 = sessionStorage.getItem('score2');
 
+// To allow the user answer alternatively
 let currentPlayer = 1; 
 let currentQuestionIndex = 0; 
 let allQuestions = []; 
@@ -13,6 +17,7 @@ let allQuestions = [];
 let Player1Score = Number(score1) + 0;
 let Player2Score = Number(score2) + 0;
 
+//Fetch questions based on difficulty
 const fetchQuestionsByDifficulty = async (difficulty) => {
     try {
         const response = await fetch(`https://the-trivia-api.com/api/questions?categories=${category}&difficulties=${difficulty}&limit=10`, {
@@ -34,6 +39,8 @@ const fetchQuestionsByDifficulty = async (difficulty) => {
     }
 }
 
+//To ensure that the easyQuestions, mediumQuestions and hardQuestions are exactkly 2 questions.
+
 const ensureTwoQuestions = async (difficulty) => {
     let questions = [];
     while (questions.length < 2) {
@@ -46,11 +53,14 @@ const ensureTwoQuestions = async (difficulty) => {
     }
     return questions; 
 }
+// When the Fetch API is working the UI show loading  animation
 
 const loadingIndicator = document.createElement('p');
 loadingIndicator.textContent = "Loading....";
 loadingIndicator.classList.add('loading');
 document.getElementById('question').appendChild(loadingIndicator);
+
+// To fetch questions of each category
 
 const fetchAllQuestions = async () => {
     try {
@@ -70,6 +80,8 @@ const fetchAllQuestions = async () => {
     }
 }
 
+
+//To display the questions to the players
 const displayQuestion = () => {
     const questionTab = document.getElementById('question');
     const answerTab = document.getElementById('answer');
@@ -122,6 +134,8 @@ const createOptions = (answer, index, optionsContainer) => {
     optionsContainer.appendChild(label);
     optionsContainer.appendChild(document.createElement('br')); 
 }
+//After click on check answer-- the answer is right or wrong and displaying  the correct answer
+
 
 const handleAnswerSubmission = () => {
     const showAnswer = document.getElementById('showAnswer');
@@ -177,7 +191,7 @@ const handleAnswerSubmission = () => {
     }
 };
 
-
+//After the game is over-- the players decide to end it or continue it on different category.
 const displayEndGameOptions = (score1, score2) => {
     const questionsTab = document.getElementById('questions');
     questionsTab.innerHTML = '';
@@ -212,6 +226,8 @@ const endGame = () => {
     window.location.href = 'index.html';
 }
 
+
+// To shuffle the options of the answer
 const shuffleAnswers = (answers) => {
     for (let i = answers.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));

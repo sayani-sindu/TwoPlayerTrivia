@@ -1,8 +1,9 @@
+//API Key, Player-1, Player-2 and Start Game Button.
+
 const API_KEY = 'ApiKeyAuth';
 const player1Input = document.getElementById('player1');
 const player2Input = document.getElementById('player2');
 const gameButton = document.getElementById('startGame');
-// Function to handle category selection creation
 
 
 // Function to handle the "Start Game" button click on index.html
@@ -47,10 +48,7 @@ const startGame = async () => {
 
 
 
-// Function to load categories and display them on selection.html
 
-
-// Function to get the selected category
 
 
 

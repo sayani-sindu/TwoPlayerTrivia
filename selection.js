@@ -1,5 +1,9 @@
+//Game and Selecting Categories
+
 const Game = document.getElementById('Game');
 const addCategory = document.getElementById('addCategories');
+
+//Creating option for each Category
 
 const selectCategory = (category) => {
     const addCategory = document.getElementById('addCategories');
@@ -9,6 +13,8 @@ const selectCategory = (category) => {
     addCategory.appendChild(selection);
 };
 
+// Load Categories function --  loads categories from the database and creates options for each category
+
 const loadCategories = () => {
   
 
@@ -16,10 +22,10 @@ const loadCategories = () => {
     const player1 = sessionStorage.getItem('player1');
     const player2 = sessionStorage.getItem('player2');
     const categories = JSON.parse(sessionStorage.getItem('categories')); 
-    const categoryCompleted = sessionStorage.getItem('category'); // Parse categories as array
+    const categoryCompleted = sessionStorage.getItem('category'); 
 
     if (categories && categories.length > 0) {
-        addCategory.innerHTML = '<option value="">Select a Category</option>';  // Reset dropdown
+        addCategory.innerHTML = '<option value="">Select a Category</option>';  
         
         categories.forEach((category) => {
             if(category !== categoryCompleted)
@@ -43,6 +49,9 @@ const loadCategories = () => {
     }
 };
 
+// After click on Submit Selection --  get the selected category and proceed to the next step
+
+
 const getSelectedCategory = () => {
     const addCategory = document.getElementById('addCategories');
     const selectedCategory = addCategory.value;
@@ -58,6 +67,7 @@ const getSelectedCategory = () => {
     sessionStorage.setItem('category', selectedCategory);
     window.location.href = 'game.html';
 };
+// when the players want to continue the game
 
 const restartGame = sessionStorage.getItem('restartGame');
 const score1 = sessionStorage.getItem('score1');
