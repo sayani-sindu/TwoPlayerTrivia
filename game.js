@@ -92,12 +92,12 @@ const displayQuestion = () => {
     const question = allQuestions[currentQuestionIndex];
 
     const playerName = currentPlayer === 1 ? player1 : player2;
-
+    //Display player name
     const playerDisplay = document.createElement('p');
     playerDisplay.classList.add('player-name');
     playerDisplay.innerText = `Player: ${playerName.charAt(0).toUpperCase() + playerName.slice(1)}`;
     questionTab.appendChild(playerDisplay);
-
+    //Display Question
     const questionDisplay = document.createElement('p');
     questionDisplay.classList.add('question');
     questionDisplay.innerText = question.question;
