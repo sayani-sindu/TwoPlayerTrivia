@@ -46,13 +46,6 @@ const startGame = async () => {
     }
 };
 
-
-
-
-
-
-
-
 // Function to initialize the game based on the page loaded
 gameButton.addEventListener('click', startGame);
    

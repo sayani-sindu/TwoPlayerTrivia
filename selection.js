@@ -9,7 +9,7 @@ const selectCategory = (category) => {
     const addCategory = document.getElementById('addCategories');
     const selection = document.createElement('option');
     selection.value = category;
-    selection.innerText = category.charAt(0).toUpperCase() + category.slice(1).replace(/_/g, ' ');
+    selection.innerText = category.charAt(0).toUpperCase() + category.slice(1).replaceAll('_', ' ');
     addCategory.appendChild(selection);
 };
 
